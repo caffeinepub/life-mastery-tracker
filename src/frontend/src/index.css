@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/fonts/Sora.woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0.1 0.012 262;
+    --foreground: 0.94 0.01 85;
+    --card: 0.14 0.016 265;
+    --card-foreground: 0.94 0.01 85;
+    --popover: 0.14 0.016 265;
+    --popover-foreground: 0.94 0.01 85;
+    --primary: 0.78 0.15 85;
+    --primary-foreground: 0.12 0.01 85;
+    --secondary: 0.2 0.022 265;
+    --secondary-foreground: 0.85 0.02 85;
+    --muted: 0.18 0.018 265;
+    --muted-foreground: 0.55 0.03 265;
+    --accent: 0.65 0.12 195;
+    --accent-foreground: 0.95 0.01 195;
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.95 0.01 85;
+    --border: 0.22 0.025 265;
+    --input: 0.2 0.025 265;
+    --ring: 0.78 0.15 85;
+    --radius: 0.75rem;
+    --chart-1: 0.78 0.15 85;
+    --chart-2: 0.65 0.12 195;
+    --chart-3: 0.7 0.16 145;
+    --chart-4: 0.62 0.22 25;
+    --chart-5: 0.72 0.16 320;
+    --sidebar: 0.12 0.015 265;
+    --sidebar-foreground: 0.85 0.02 85;
+    --sidebar-primary: 0.78 0.15 85;
+    --sidebar-primary-foreground: 0.12 0.01 85;
+    --sidebar-accent: 0.18 0.02 265;
+    --sidebar-accent-foreground: 0.85 0.02 85;
+    --sidebar-border: 0.22 0.025 265;
+    --sidebar-ring: 0.78 0.15 85;
+
+    /* Custom score tokens */
+    --score-green-l: 0.72;
+    --score-green-c: 0.16;
+    --score-green-h: 145;
+    --score-amber-l: 0.78;
+    --score-amber-c: 0.16;
+    --score-amber-h: 75;
+    --score-red-l: 0.62;
+    --score-red-c: 0.22;
+    --score-red-h: 25;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Sora", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .font-display {
+    font-family: "Fraunces", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .score-text-green {
+    color: oklch(0.72 0.16 145);
+  }
+  .score-text-amber {
+    color: oklch(0.78 0.16 75);
+  }
+  .score-text-red {
+    color: oklch(0.62 0.22 25);
+  }
+
+  .score-bg-green {
+    background-color: oklch(0.72 0.16 145 / 0.12);
+    border-color: oklch(0.72 0.16 145 / 0.35);
+  }
+  .score-bg-amber {
+    background-color: oklch(0.78 0.16 75 / 0.12);
+    border-color: oklch(0.78 0.16 75 / 0.35);
+  }
+  .score-bg-red {
+    background-color: oklch(0.62 0.22 25 / 0.12);
+    border-color: oklch(0.62 0.22 25 / 0.35);
+  }
+
+  .bar-green {
+    background-color: oklch(0.72 0.16 145);
+  }
+  .bar-amber {
+    background-color: oklch(0.78 0.16 75);
+  }
+  .bar-red {
+    background-color: oklch(0.62 0.22 25);
+  }
+
+  .section-header {
+    @apply text-xs font-semibold tracking-widest uppercase;
+    color: oklch(0.65 0.12 195);
+  }
+
+  /* Custom slider thumb */
+  [role="slider"] {
+    border-color: oklch(0.78 0.15 85) !important;
+    background-color: oklch(0.78 0.15 85) !important;
+  }
+}
